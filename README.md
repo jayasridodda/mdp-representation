@@ -60,9 +60,10 @@ robot_mdp = {
 }
 ```
 
-## OUTPUT
+## OUTPUT:
 
-![image](https://github.com/SaiDarshan2003/mdp-representation/assets/94692595/46a87664-5efc-4304-9dba-38cf923322c6)
+![image](https://github.com/user-attachments/assets/37db356b-3e37-4502-8dc4-13bd98a1ba03)
+
 
 
 ## RESULT
