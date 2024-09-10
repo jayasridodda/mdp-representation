@@ -1,60 +1,70 @@
-# MDP REPRESENTATION
+## AIM
 
-## AIM:
-To represent any one real-world problem in MDP form.
+To represent a Markov Decision Process(MDP) problem.
+
 ## PROBLEM STATEMENT:
-To develop a game application the role of the agent is to promote if the level is cleared or depromote if the game is loss 
 
-### State Space:
-```
-{A1,A2,A3}--> {0,1,2}
-A1--> LEVEL 1
-A2--> LEVEL 2 
-A3--> LEVEL 3
-```
-### Sample State
-A1--> 0 --> LEVEL 1
+### Problem Description
 
-### Action Space:
-```
-{W,L}-->{0,1}
-W-->True
-L-->False
-```
+A robotic agent is tasked with navigating through an environment. The agent begins at the starting point (S) and aims to reach a targeted location (T) while avoiding obstacles (O). The agent has the ability to move forward (F) and backward (B) within the environment.
+
+### State Space
+
+S (Starting point): 0
+M (Moving forward): 1
+T (Targeted location): 2
+O (Encountering obstacle): 3
+
+### Sample State:
+
+In the event of moving backward from the start position the robot will face an obstacle
+
+### Action Space
+
+F (Forward movement): 1
+B (Backward movement): 2
+
 ### Sample Action
-W--> 0 --> True
 
-### Reward Function:
-```
-R = { +1 , if we come closer to the winning
-       0 , if not
-```
+The robot takes forward movemnt to go from start state to forward state.
+
+### Reward Function
+
++1 if the agent reaches the targeted location (T)
+0 otherwise
+
 ### Graphical Representation
-<img width="383" alt="r1" src="https://github.com/naramala-niharika/mdp-representation/assets/94165377/04bd370c-fe9f-4d93-94be-0062fa7cda17">
 
+![image](https://github.com/SaiDarshan2003/mdp-representation/assets/94692595/9859006b-d4d0-47c8-a8bf-dd8a4890ce6a)
 
-## PYTHON REPRESENTATION:
+## PYTHON REPRESENTATION
 ```
-P = {
-    0:{
-        0: [(0,1,1,True)],
-        1: [(1.0,0,1.0,False)]
+
+robot_mdp = {
+    0: {
+        1: [(0.85, 1, 0, False), (0.15, 0, 0, False)],
+        2: [(0.92, 0, 0, False), (0.08, 1, 0, False)]
     },
-    1:{
-        0: [(0,2,1,True)],
-        1: [(1,0,1,False)]
+    1: {
+        1: [(0.88, 2, 1, True), (0.12, 0, 0, False)],
+        2: [(0.78, 0, 0, False), (0.22, 2, 1, True)]
     },
-    2:{
-        0: [(0,2,1,True)],
-        1: [(1,1,1,False)]
+    2: {
+        1: [(0.94, 2, 0, False), (0.06, 1, 0, False)],
+        2: [(0.89, 1, 0, False), (0.11, 2, 0, False)]
+    },
+    3: {
+        1: [(0.80, 3, 0, True), (0.20, 2, 0, False)],
+        2: [(0.75, 2, 0, False), (0.25, 3, 0, True)]
     }
 }
-P
 ```
-## OUTPUT:
-<img width="604" alt="r1 1" src="https://github.com/naramala-niharika/mdp-representation/assets/94165377/8fa55c3b-116c-4270-bf6c-3218681054eb">
+
+## OUTPUT
+
+![image](https://github.com/SaiDarshan2003/mdp-representation/assets/94692595/46a87664-5efc-4304-9dba-38cf923322c6)
 
 
-## RESULT:
-Thus the given real world problem is successfully represented in a MDP form .
+## RESULT
 
+Above, We have represented an MDP problem in a textual,graphical and technical manner successfully.
